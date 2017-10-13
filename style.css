@@ -1,0 +1,35 @@
+/*
+ Theme Name:   Jupiter Child
+ Theme URI:    http://themes.themegoods.com/jupiter_wp
+ Description:  Jupiter Child Theme
+ Author:       Azizul Haque
+ Author URI:   http://azizultex.com
+ Template:     jupiter
+ Version:      1.0
+ Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
+ Text Domain:  jupiter-child
+*/
+
+/* =Theme customization starts here
+-------------------------------------------------------------- */
+.clear_fix{
+	clear: both;
+}
+
+.padding-top-70{
+	padding-top: 70px;
+}
+#page_slider ul.flex-direction-nav{
+	margin: 0 !important;
+}
+#page_slider h3 {
+    text-align: center;
+    font-weight: 500;
+    color: #333;
+    font-size: 20px;
+}
+.archive .sidebar_content h2{
+	text-align: center;
+	margin-top: 0;
+	margin-bottom: 20px;
+}
