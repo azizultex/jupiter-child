@@ -103,14 +103,13 @@ class vcColumnsBlog extends WPBakeryShortCode {
 		    'numberposts' => $items,
 		    'order' => 'DESC',
 		    'orderby' => 'date',
-		    'post_type' => array('post'),
+		    'post_type' =>'post',
 		);
 		
 		if(!empty($category))
 		{
-			$args['category'] = $category;
+			$args['category_name'] = $category;
 		}
-
 		$posts_arr = get_posts($args);
 		$return_html = '';
 		$return_html.= '<div class="'.$size.' ppb_column">';
@@ -263,25 +262,20 @@ class vcColumnsBlog extends WPBakeryShortCode {
 			    $return_html.= '<div class="post_inner_wrapper half header">';
 			    $return_html.= '<div class="post_header_wrapper half">';
 			    $return_html.= '<div class="post_header half">';
-			    $return_html.= '<h4><a href="'.get_permalink($post->ID).'" title="'.$post->post_title.'">'.$post->post_title.'</a></h4>';
+			    $categories = wp_get_post_categories($post->ID);
+			    foreach($categories as $category){
+					$return_html.= '<h4><a href="'. get_category_link($category) .'">'. get_cat_name($category) .'</a></h4>';
+			    }
+
+			    $return_html.= '<h3><a href="'.get_permalink($post->ID).'" title="'.$post->post_title.'">'.$post->post_title.'</a></h3>';
 			    $return_html.= '</div></div>';
-				$return_html.= '<p>'.pp_substr(strip_tags(strip_shortcodes($post->post_content)), 100).'</p>';
+				/*$return_html.= '<p>'.pp_substr(strip_tags(strip_shortcodes($post->post_content)), 100).'</p>';*/
 				$return_html.= '<div class="post_detail half">';
 				
-				if(comments_open($post->ID))
-				{
-					$return_html.= '<a href="'.get_permalink($post->ID).'" title="'.$post->post_title.'">'.get_comments_number($post->ID).' ';
-					if(get_comments_number($post->ID) <= 1)
-					{
-						$return_html.= __( 'Comment', THEMEDOMAIN );
-					}
-					else
-					{
-						$return_html.= __( 'Comments', THEMEDOMAIN );
-					}
-					$return_html.= '</a>'.' / ';
-				}
-				$return_html.= date('M d, Y', strtotime($post->post_date));
+				$author_id=$post->post_author;
+
+				$return_html.= '<span class="align-left"><a href="'. get_author_posts_url($author_id) .'">'. get_the_author_meta('display_name' , $author_id) .'</a></span>';
+				$return_html.= '<span class="align-right">'.date('M d, Y', strtotime($post->post_date)) . '</span>';
 				
 				if($current_page_template == 'page_sidebar.php')
 				{

@@ -96,12 +96,12 @@ class vcCategoryBlog extends WPBakeryShortCode {
 		    'numberposts' => $items,
 		    'order' => 'DESC',
 		    'orderby' => 'date',
-		    'post_type' => array('post'),
+		    'post_type' => 'post',
 		);
 		
 		if(!empty($category))
 		{
-			$args['category'] = $category;
+			$args['category_name'] = $category;
 		}
 
 		$posts_arr = get_posts($args);
