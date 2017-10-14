@@ -45,6 +45,9 @@
 #page_slider ul.flex-direction-nav{
 	margin: 0 !important;
 }
+#page_slider .flex-direction-nav a:before {
+	line-height: 40px;
+}
 #page_slider h3 {
     text-align: center;
     font-weight: 500;
