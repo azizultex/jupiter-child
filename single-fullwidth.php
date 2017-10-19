@@ -402,7 +402,7 @@ $post_ft_type = get_post_meta($post->ID, 'post_ft_type', true);
 		?>
 		<div id="post_more_wrapper" class="hiding">
 			<a href="javascript:;" id="post_more_close"><img src="<?php echo get_template_directory_uri(); ?>/images/popup_close.png" alt=""/></a>
-			<h5 class="header_line subtitle"><span><?php _e( 'More Story', THEMEDOMAIN ); ?></span></h5>
+			
 			<?php
 				if(!empty($post_more_image))
 				{

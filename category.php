@@ -8,9 +8,6 @@
 get_header(); 
 ?>
 <div id="page_caption" class="fade-in animated3">
-	<div class="boxed_wrapper">
-		<div class="sub_page_caption"><?php echo dimox_breadcrumbs(); ?></div>
-	</div>
 </div>
 <div id="content_wrapper">
     <div class="inner">

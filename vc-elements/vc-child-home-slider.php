@@ -93,7 +93,7 @@ class vcHomeSlider extends WPBakeryShortCode {
 			foreach($slider_posts as $key => $slider_post){
 				$image_thumb = '';
 				$html .= '<li>';
-				if(has_post_thumbnail($slider_post->ID, 'slider_full_ft'))
+				if(has_post_thumbnail($slider_post->ID, 'home_slider'))
 				{
 				    $image_id = get_post_thumbnail_id($slider_post->ID);
 				    $image_thumb = wp_get_attachment_image_src($image_id, 'home_slider', true);

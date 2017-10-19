@@ -273,9 +273,7 @@ class vcColumnsBlog extends WPBakeryShortCode {
 				$return_html.= '<div class="post_detail half">';
 				
 				$author_id=$post->post_author;
-
-				$return_html.= '<span class="align-left"><a href="'. get_author_posts_url($author_id) .'">'. get_the_author_meta('display_name' , $author_id) .'</a></span>';
-				$return_html.= '<span class="align-right">'.date('M d, Y', strtotime($post->post_date)) . '</span>';
+				$return_html.= '<span>'.date('M d, Y', strtotime($post->post_date)) . '</span>';
 				
 				if($current_page_template == 'page_sidebar.php')
 				{
