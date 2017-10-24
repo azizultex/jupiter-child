@@ -252,3 +252,6 @@ body.single #page_caption {
 .iframe_wrapper iframe {
     max-width: 100%;
 }
+.post_img img { 
+	box-sizing: border-box
+}
