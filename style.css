@@ -255,3 +255,22 @@ body.single #page_caption {
 .post_img img { 
 	box-sizing: border-box
 }
+
+.mobil_only {
+    padding: 0 !important;
+}
+@media only screen and (max-width: 560px) and (min-width: 548px) {
+	.mobil_only .vc_column-inner {
+	    padding: 5px !important;
+	}
+}
+@media only screen and (max-width: 547px){
+	.mobil_only .vc_column-inner {
+	    padding: 1px !important;
+	}
+}
+@media only screen and (max-width: 843px){
+	#page_slider img {
+	    height: 210px !important;
+	}
+}
