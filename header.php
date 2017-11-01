@@ -21,7 +21,7 @@ if ( ! isset( $content_width ) ) $content_width = 960;
 
 <title><?php wp_title('&lsaquo;', true, 'right'); ?><?php bloginfo('name'); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
 <?php
